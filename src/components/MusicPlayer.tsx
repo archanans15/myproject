@@ -49,8 +49,8 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicUrl, autoPlayTrig
           <Music size={16} />
         </div>
         <div className="music-labels">
-          <span className="music-title">Wedding Melodies</span>
-          <span className="music-status">{isPlaying ? 'Playing Romantic Audio' : 'Paused'}</span>
+          <span className="music-title">Pookal Pookum (Flute Cover)</span>
+          <span className="music-status">{isPlaying ? 'Playing Flute Song' : 'Tap Play'}</span>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Heart, Quote } from 'lucide-react';
+import { Heart, Quote, Sparkles } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
+import { ScratchPhotoCard } from './ScratchPhotoCard';
 
 interface CoupleStoryProps {
   config: WeddingConfig;
@@ -13,14 +14,21 @@ export const CoupleStory: React.FC<CoupleStoryProps> = ({ config }) => {
         <div className="section-header text-center">
           <span className="section-eyebrow font-sub">OUR JOURNEY TO FOREVER</span>
           <h2 className="section-title">Meet Groom & Bride</h2>
+          <p className="scratch-hint font-sub">
+            <Sparkles size={16} className="inline-icon gold-icon" /> Scratch cards below to reveal Rakesh & Archana!
+          </p>
           <div className="title-underline"></div>
         </div>
 
         <div className="couple-grid">
+          {/* Groom Scratch Card */}
           <div className="couple-card glass-morphism">
             <div className="couple-img-wrapper">
-              <img src={config.groomPhoto} alt={config.groomName} className="couple-img" />
-              <span className="couple-badge">The Groom</span>
+              <ScratchPhotoCard
+                imageSrc={config.groomPhoto}
+                name={config.groomName}
+                roleBadge="The Groom"
+              />
             </div>
             <div className="couple-info text-center">
               <h3 className="couple-name">{config.groomName}</h3>
@@ -35,10 +43,14 @@ export const CoupleStory: React.FC<CoupleStoryProps> = ({ config }) => {
             </div>
           </div>
 
+          {/* Bride Scratch Card */}
           <div className="couple-card glass-morphism">
             <div className="couple-img-wrapper">
-              <img src={config.bridePhoto} alt={config.brideName} className="couple-img" />
-              <span className="couple-badge">The Bride</span>
+              <ScratchPhotoCard
+                imageSrc={config.bridePhoto}
+                name={config.brideName}
+                roleBadge="The Bride"
+              />
             </div>
             <div className="couple-info text-center">
               <h3 className="couple-name">{config.brideName}</h3>

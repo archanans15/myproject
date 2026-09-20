@@ -152,102 +152,157 @@ body {
   border-radius: 2px;
 }
 
-/* Cover Envelope Screen */
-.cover-overlay {
+/* Landing Cover & Door Opening Animation */
+.landing-cover-viewport {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: #070305;
+  perspective: 1600px;
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   padding: 20px;
-  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+  transition: opacity 0.8s ease 1.2s;
 }
 
-.cover-overlay.cover-opening {
-  transform: translateY(-100%);
+.landing-cover-viewport.opening-doors {
   opacity: 0;
   pointer-events: none;
 }
 
-.cover-card {
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  border-radius: 24px;
-  padding: 40px 30px;
-  text-align: center;
-  border: 1px solid var(--border-gold-glow);
+/* Door Overlay Panels */
+.door-panel {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f0a14 0%, #3d1425 50%, #15060d 100%);
+  z-index: 15;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.2s ease;
+  pointer-events: none;
+  opacity: 0;
 }
 
-.cover-border-decorative {
+.door-panel-left {
+  left: 0;
+  transform-origin: left center;
+  border-right: 2px solid var(--accent-gold);
+}
+
+.door-panel-right {
+  right: 0;
+  transform-origin: right center;
+  border-left: 2px solid var(--accent-gold);
+}
+
+.opening-doors .door-panel {
+  opacity: 1;
+}
+
+.opening-doors .door-panel-left {
+  transform: perspective(1600px) rotateY(-110deg) translateX(-20%);
+  opacity: 0;
+}
+
+.opening-doors .door-panel-right {
+  transform: perspective(1600px) rotateY(110deg) translateX(20%);
+  opacity: 0;
+}
+
+.door-ornament-border {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
   border: 1px dashed var(--border-gold);
   border-radius: 16px;
+}
+
+/* Landing Cover Card */
+.landing-cover-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 28px;
+  padding: 48px 36px;
+  text-align: center;
+  border: 1.5px solid var(--border-gold-glow);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8), var(--shadow-gold);
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+}
+
+.opening-doors .landing-cover-card {
+  transform: scale(0.9) translateY(-30px);
+  opacity: 0;
+}
+
+.cover-border-inner {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: 1px dashed var(--border-gold);
+  border-radius: 20px;
   pointer-events: none;
 }
 
-.cover-subheading {
-  font-family: var(--font-sub);
-  font-size: 1.2rem;
+.cover-tagline {
+  font-size: 1.15rem;
   color: var(--accent-gold-light);
-  letter-spacing: 2px;
-  margin-top: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .cover-monogram {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 24px 0 16px;
+  gap: 16px;
+  margin: 24px 0 14px;
 }
 
-.mono-letter {
+.mono-initial {
   font-family: var(--font-serif);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--accent-gold);
+  color: var(--text-primary);
+  letter-spacing: 2px;
 }
 
-.mono-heart {
-  color: var(--accent-gold);
+.mono-heart-gold {
   animation: pulse 2s infinite ease-in-out;
 }
 
-.cover-couple-names {
+.cover-couple-title {
   font-family: var(--font-serif);
-  font-size: 2.4rem;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+  text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
-.cover-couple-names .ampersand {
+.cover-couple-title .ampersand {
   color: var(--accent-gold);
   font-style: italic;
+  font-weight: 400;
 }
 
-.cover-wedding-date {
-  font-family: var(--font-sub);
+.cover-date-formatted {
   font-size: 1.25rem;
   color: var(--text-secondary);
-  margin-bottom: 24px;
-}
-
-.guest-badge-container {
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid var(--border-gold);
-  padding: 12px 20px;
-  border-radius: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .guest-invite-label {
@@ -671,6 +726,65 @@ body {
   overflow: hidden;
 }
 
+.scratch-card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.scratch-card-container:active {
+  cursor: grabbing;
+}
+
+.scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: opacity 0.6s ease;
+  touch-action: none;
+}
+
+.scratch-canvas.revealed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scratch-hint {
+  font-size: 1.1rem;
+  color: var(--accent-gold-light);
+  margin-top: 8px;
+}
+
+.quick-reveal-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(15, 7, 10, 0.85);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold-light);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.quick-reveal-btn:hover {
+  background: var(--accent-gold);
+  color: #000;
+}
+
 .couple-img {
   width: 100%;
   height: 100%;
@@ -992,15 +1106,24 @@ body {
 }
 
 /* Gallery Section */
+.gallery-section {
+  text-align: center;
+}
+
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .gallery-item {
   position: relative;
-  height: 260px;
+  width: 280px;
+  height: 320px;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -1472,18 +1595,31 @@ body {
   padding: 60px 0 100px;
   border-top: 1px solid var(--border-gold);
   margin-top: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .footer-title {
   font-family: var(--font-serif);
   font-size: 2.2rem;
   color: var(--accent-gold-light);
+  text-align: center;
 }
 
 .footer-sub {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-top: 4px;
+  text-align: center;
 }
 
 .footer-divider {

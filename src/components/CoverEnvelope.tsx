@@ -9,46 +9,48 @@ interface CoverEnvelopeProps {
 }
 
 export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ config, guestName, onOpen }) => {
-  const [isOpenAnimation, setIsOpenAnimation] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
 
   const handleOpenClick = () => {
-    setIsOpenAnimation(true);
+    setIsOpening(true);
     setTimeout(() => {
       onOpen();
-    }, 800);
+    }, 1200);
   };
 
   return (
-    <div className={`cover-overlay ${isOpenAnimation ? 'cover-opening' : ''}`}>
-      <div className="cover-card glass-morphism">
-        <div className="cover-border-decorative"></div>
-        
-        <div className="cover-header">
-          <Sparkles className="icon-sparkle animate-pulse-glow" size={28} />
-          <p className="cover-subheading">{config.tagline}</p>
+    <div className={`landing-cover-viewport ${isOpening ? 'opening-doors' : ''}`}>
+      {/* Royal Opening Doors Overlay */}
+      <div className="door-panel door-panel-left">
+        <div className="door-ornament-border"></div>
+      </div>
+      <div className="door-panel door-panel-right">
+        <div className="door-ornament-border"></div>
+      </div>
+
+      {/* Main Elegant Invitation Cover Card (as shown in screenshot) */}
+      <div className="landing-cover-card glass-morphism">
+        <div className="cover-border-inner"></div>
+
+        <div className="cover-header text-center">
+          <Sparkles className="gold-icon icon-glow animate-pulse-glow" size={32} />
+          <p className="cover-tagline font-sub">{config.tagline}</p>
         </div>
 
         <div className="cover-monogram">
-          <span className="mono-letter">{config.groomName[0]}</span>
-          <Heart className="mono-heart" size={24} fill="currentColor" />
-          <span className="mono-letter">{config.brideName[0]}</span>
+          <span className="mono-initial">{config.groomName[0]}</span>
+          <Heart className="mono-heart-gold" size={24} fill="#d4af37" color="#d4af37" />
+          <span className="mono-initial">{config.brideName[0]}</span>
         </div>
 
-        <h1 className="cover-couple-names">
+        <h1 className="cover-couple-title">
           {config.groomName} <span className="ampersand">&</span> {config.brideName}
         </h1>
 
-        <p className="cover-wedding-date">
-          {new Date(config.weddingDate).toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
-        </p>
+        <p className="cover-date-formatted font-sub">{config.weddingTimeFormatted}</p>
 
         {guestName && (
-          <div className="guest-badge-container">
+          <div className="guest-badge-cover">
             <span className="guest-invite-label">Specially Prepared For</span>
             <h3 className="guest-invite-name">{guestName}</h3>
           </div>
@@ -57,14 +59,14 @@ export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ config, guestName,
         <button className="wax-seal-button" onClick={handleOpenClick} aria-label="Open Invitation">
           <div className="seal-ring">
             <div className="seal-center">
-              <Heart className="seal-heart" size={32} fill="#d4af37" />
-              <span className="seal-text">OPEN INVITATION</span>
+              <Heart className="seal-heart" size={30} fill="#d4af37" color="#d4af37" />
+              <span className="seal-text">TAP TO OPEN DOORS</span>
             </div>
           </div>
         </button>
 
         <p className="music-hint font-sub">
-          <Music size={14} className="inline-icon" /> Sound on for ambient wedding music
+          <Music size={14} className="inline-icon" /> Sound on for Pookal Pookum flute music
         </p>
       </div>
     </div>

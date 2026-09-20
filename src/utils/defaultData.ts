@@ -15,9 +15,9 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
   howWeMet: 'With the blessings of our families, we take our step together into a lifetime of happiness, love, and togetherness.',
   groomBio: 'Gentle, loving, and ambitious.',
   brideBio: 'Graceful, creative, and joyful.',
-  groomPhoto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800',
-  bridePhoto: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800',
-  coupleHeroPhoto: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200',
+  groomPhoto: '/images/groom.jpg',
+  bridePhoto: '/images/bride.jpg',
+  coupleHeroPhoto: '/images/couple.jpg',
   events: [
     {
       id: 'muhurtham',
@@ -55,27 +55,22 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
   gallery: [
     {
       id: 'g1',
-      url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800',
-      caption: 'Golden Moments'
+      url: '/images/couple.jpg',
+      caption: 'Rakesh & Archana • Together in Harmony'
     },
     {
       id: 'g2',
-      url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800',
-      caption: 'Laughter & Togetherness'
+      url: '/images/groom.jpg',
+      caption: 'Rakesh • The Groom'
     },
     {
       id: 'g3',
-      url: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800',
-      caption: 'Eternal Promise'
-    },
-    {
-      id: 'g4',
-      url: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800',
-      caption: 'Blessings & Joy'
+      url: '/images/bride.jpg',
+      caption: 'Archana • The Bride'
     }
   ],
   theme: 'royal-gold',
-  bgMusicUrl: 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-acoustic-112191.mp3'
+  bgMusicUrl: '/music/pookal_pookum_flute.mp3'
 };
 
 export const INITIAL_WISHES: GuestWish[] = [

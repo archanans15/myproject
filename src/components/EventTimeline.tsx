@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Sparkles, Wine, Music, Calendar, MapPin, Shirt } from 'lucide-react';
+import { Heart, Sparkles, Wine, Music, Calendar, MapPin } from 'lucide-react';
 import type { WeddingConfig, EventDetails } from '../types/invitation';
 
 interface EventTimelineProps {
@@ -56,13 +56,6 @@ export const EventTimeline: React.FC<EventTimelineProps> = ({ config }) => {
                       <span className="detail-label"><MapPin size={14} /> Venue:</span>
                       <span className="detail-value">{evt.location} ({evt.address})</span>
                     </div>
-
-                    {evt.dressCode && (
-                      <div className="detail-row dress-code-row">
-                        <span className="detail-label"><Shirt size={14} /> Dress Code:</span>
-                        <span className="detail-value dress-badge">{evt.dressCode}</span>
-                      </div>
-                    )}
                   </div>
 
                   <div className="event-card-actions">
