@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Volume2, VolumeX, Music, Play, Pause } from 'lucide-react';
+import { Music, Play, Pause } from 'lucide-react';
 
 interface MusicPlayerProps {
   musicUrl: string;
@@ -9,7 +9,6 @@ interface MusicPlayerProps {
 export const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicUrl, autoPlayTriggered }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     if (audioRef.current && autoPlayTriggered) {
@@ -34,41 +33,23 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ musicUrl, autoPlayTrig
     }
   };
 
-  const toggleMute = () => {
-    if (!audioRef.current) return;
-    audioRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
-
   return (
-    <div className="music-player-bar glass-morphism">
+    <div className="compact-music-floating">
       <audio ref={audioRef} src={musicUrl} loop preload="auto" />
-      
-      <div className="music-info">
-        <div className={`music-disc ${isPlaying ? 'spin' : ''}`}>
-          <Music size={16} />
+      <button
+        className={`compact-music-btn glass-morphism ${isPlaying ? 'playing' : ''}`}
+        onClick={togglePlay}
+        aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
+        title={isPlaying ? 'Pause Music' : 'Play Music'}
+      >
+        <div className={`music-disc-mini ${isPlaying ? 'spin' : ''}`}>
+          <Music size={15} className="gold-icon" />
         </div>
-        <div className="music-labels">
-          <span className="music-title">Pookal Pookum (Flute Cover)</span>
-          <span className="music-status">{isPlaying ? 'Playing Flute Song' : 'Tap Play'}</span>
+        <div className="music-play-state-icon">
+          {isPlaying ? <Pause size={15} /> : <Play size={15} />}
         </div>
-      </div>
-
-      <div className="music-equalizer">
-        <span className={`bar ${isPlaying ? 'animating' : ''}`}></span>
-        <span className={`bar ${isPlaying ? 'animating' : ''}`}></span>
-        <span className={`bar ${isPlaying ? 'animating' : ''}`}></span>
-        <span className={`bar ${isPlaying ? 'animating' : ''}`}></span>
-      </div>
-
-      <div className="music-actions">
-        <button className="music-btn" onClick={togglePlay} title={isPlaying ? "Pause Music" : "Play Music"}>
-          {isPlaying ? <Pause size={18} /> : <Play size={18} />}
-        </button>
-        <button className="music-btn" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
-          {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-        </button>
-      </div>
+      </button>
     </div>
   );
 };
+

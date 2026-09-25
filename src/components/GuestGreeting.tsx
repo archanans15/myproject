@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, UserCheck } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
 interface GuestGreetingProps {
@@ -18,7 +18,6 @@ export const GuestGreeting: React.FC<GuestGreetingProps> = ({ config, guestName 
           <div className="corner-flourish bottom-right"></div>
 
           <div className="greeting-header text-center">
-            <UserCheck className="gold-icon icon-glow" size={32} />
             <h2 className="greeting-subtitle font-sub">CORDIAL INVITATION</h2>
           </div>
 

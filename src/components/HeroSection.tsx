@@ -43,32 +43,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
       </div>
 
       <div className="hero-content container">
-        <div className="save-date-badge animate-fade-down">
+        <div className="save-date-badge animate-fade-down" style={{ animationDelay: '0.2s' }}>
           <Calendar size={16} />
           <span>SAVE THE DATE</span>
         </div>
 
-        <p className="hero-tagline animate-fade-up">{config.tagline}</p>
+        <p className="hero-tagline animate-fade-up" style={{ animationDelay: '0.4s' }}>{config.tagline}</p>
 
-        <h1 className="hero-title animate-zoom-in">
+        <h1 className="hero-title animate-zoom-in" style={{ animationDelay: '0.6s' }}>
           <span className="groom-name">{config.groomName}</span>
           <span className="hero-ampersand">&</span>
           <span className="bride-name">{config.brideName}</span>
         </h1>
 
-        <div className="hero-date-wrapper animate-fade-up">
+        <div className="hero-date-wrapper animate-fade-up" style={{ animationDelay: '0.8s' }}>
           <div className="divider-line"></div>
           <p className="hero-formatted-date">{config.weddingTimeFormatted}</p>
           <div className="divider-line"></div>
         </div>
 
-        <p className="hero-welcome-msg animate-fade-up">{config.welcomeMessage}</p>
+        <p className="hero-welcome-msg animate-fade-up" style={{ animationDelay: '1.0s' }}>{config.welcomeMessage}</p>
 
-        <div className="countdown-container glass-morphism animate-fade-up">
+        <div className="countdown-container glass-morphism animate-fade-up" style={{ animationDelay: '1.2s' }}>
           <div className="countdown-header">
-            <Sparkles size={16} className="gold-icon" />
-            <span>COUNTDOWN TO THE BIG DAY</span>
-            <Sparkles size={16} className="gold-icon" />
+            <Sparkles size={18} className="gold-icon icon-sparkle-spin" />
+            <span className="countdown-header-title">COUNTDOWN TO THE BIG DAY</span>
+            <Sparkles size={18} className="gold-icon icon-sparkle-spin" />
           </div>
           
           <div className="countdown-grid">
@@ -88,13 +88,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
             </div>
             <div className="countdown-colon">:</div>
             <div className="countdown-box">
-              <span className="countdown-number">{String(timeLeft.seconds).padStart(2, '0')}</span>
+              <span key={timeLeft.seconds} className="countdown-number tick-pulse">
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </span>
               <span className="countdown-label">Secs</span>
             </div>
           </div>
         </div>
 
-        <a href="#greeting" className="scroll-indicator" aria-label="Scroll Down">
+        <a href="#greeting" className="scroll-indicator animate-fade-up" style={{ animationDelay: '1.4s' }} aria-label="Scroll Down">
           <span className="scroll-text">SCROLL TO DISCOVER</span>
           <ChevronDown className="bounce-arrow" size={24} />
         </a>

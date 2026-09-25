@@ -33,18 +33,20 @@ export const App: React.FC = () => {
     <div className={`app-root theme-${config.theme}`}>
       <BackgroundParticles />
 
-      {!isOpened ? (
+      {!isOpened && (
         <CoverEnvelope config={config} guestName={guestName} onOpen={handleOpenInvitation} />
-      ) : (
-        <>
-          <main className="main-content">
-            <HeroSection config={config} />
-            <GuestGreeting config={config} guestName={guestName} />
-            <CoupleStory config={config} />
-            <EventTimeline config={config} />
-            <PhotoGallery gallery={config.gallery} />
-          </main>
+      )}
 
+      <main className="main-content">
+        <HeroSection config={config} />
+        <GuestGreeting config={config} guestName={guestName} />
+        <CoupleStory config={config} />
+        <EventTimeline config={config} />
+        <PhotoGallery gallery={config.gallery} />
+      </main>
+
+      {isOpened && (
+        <>
           <footer className="site-footer text-center glass-morphism">
             <div className="container">
               <Sparkles size={24} className="gold-icon margin-bottom-sm" />

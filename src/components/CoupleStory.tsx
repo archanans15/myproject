@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Quote, Sparkles } from 'lucide-react';
+import { Heart, Quote } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 import { ScratchPhotoCard } from './ScratchPhotoCard';
 
@@ -14,9 +14,6 @@ export const CoupleStory: React.FC<CoupleStoryProps> = ({ config }) => {
         <div className="section-header text-center">
           <span className="section-eyebrow font-sub">OUR JOURNEY TO FOREVER</span>
           <h2 className="section-title">Meet Groom & Bride</h2>
-          <p className="scratch-hint font-sub">
-            <Sparkles size={16} className="inline-icon gold-icon" /> Scratch cards below to reveal Rakesh & Archana!
-          </p>
           <div className="title-underline"></div>
         </div>
 

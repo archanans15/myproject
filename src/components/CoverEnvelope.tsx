@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Heart, Music, Sparkles } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
 interface CoverEnvelopeProps {
@@ -8,66 +7,68 @@ interface CoverEnvelopeProps {
   onOpen: () => void;
 }
 
-export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ config, guestName, onOpen }) => {
+export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName, onOpen }) => {
   const [isOpening, setIsOpening] = useState(false);
 
-  const handleOpenClick = () => {
+  const handleOpenClick = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (isOpening) return;
     setIsOpening(true);
     setTimeout(() => {
       onOpen();
-    }, 1200);
+    }, 1100);
   };
 
   return (
-    <div className={`landing-cover-viewport ${isOpening ? 'opening-doors' : ''}`}>
-      {/* Royal Opening Doors Overlay */}
-      <div className="door-panel door-panel-left">
-        <div className="door-ornament-border"></div>
-      </div>
-      <div className="door-panel door-panel-right">
-        <div className="door-ornament-border"></div>
-      </div>
-
-      {/* Main Elegant Invitation Cover Card (as shown in screenshot) */}
-      <div className="landing-cover-card glass-morphism">
-        <div className="cover-border-inner"></div>
-
-        <div className="cover-header text-center">
-          <Sparkles className="gold-icon icon-glow animate-pulse-glow" size={32} />
-          <p className="cover-tagline font-sub">{config.tagline}</p>
+    <div
+      className={`royal-doors-viewport ${isOpening ? 'doors-open' : ''}`}
+      onClick={() => handleOpenClick()}
+    >
+      <div className="envelope-mobile-wrapper">
+        {/* Bottom Body Envelope Panel */}
+        <div className="envelope-body-panel">
+          <img
+            src="/images/card-bottom-body.jpg"
+            alt="Envelope Body"
+            className="envelope-body-img"
+          />
         </div>
 
-        <div className="cover-monogram">
-          <span className="mono-initial">{config.groomName[0]}</span>
-          <Heart className="mono-heart-gold" size={24} fill="#d4af37" color="#d4af37" />
-          <span className="mono-initial">{config.brideName[0]}</span>
+        {/* Top Flap Envelope Panel */}
+        <div className="envelope-top-panel">
+          <img
+            src="/images/card-top-flap.png"
+            alt="Envelope Top Flap"
+            className="envelope-top-img"
+          />
         </div>
 
-        <h1 className="cover-couple-title">
-          {config.groomName} <span className="ampersand">&</span> {config.brideName}
-        </h1>
-
-        <p className="cover-date-formatted font-sub">{config.weddingTimeFormatted}</p>
-
-        {guestName && (
-          <div className="guest-badge-cover">
-            <span className="guest-invite-label">Specially Prepared For</span>
-            <h3 className="guest-invite-name">{guestName}</h3>
-          </div>
-        )}
-
-        <button className="wax-seal-button" onClick={handleOpenClick} aria-label="Open Invitation">
-          <div className="seal-ring">
-            <div className="seal-center">
-              <Heart className="seal-heart" size={30} fill="#d4af37" color="#d4af37" />
-              <span className="seal-text">TAP TO OPEN DOORS</span>
+        {/* Center Monogram Wax Seal & Tap Hint */}
+        <div className="royal-doors-center-content">
+          <button
+            className="center-seal-btn"
+            onClick={handleOpenClick}
+            aria-label="Tap to Open Royal Invitation"
+          >
+            <div className="seal-gold-wrapper">
+              <img
+                src="/images/monogram-ra.png"
+                alt="RA Monogram Seal"
+                className="center-logo-img"
+              />
             </div>
-          </div>
-        </button>
 
-        <p className="music-hint font-sub">
-          <Music size={14} className="inline-icon" /> Sound on for Pookal Pookum flute music
-        </p>
+            {/* <div className="tap-hint-wrap">
+              <div className="gold-chevron"></div>
+              <span className="tap-hint-text font-sub">TAP TO OPEN</span>
+              {guestName && (
+                <div className="guest-welcome-pill">
+                  Invited Guest: <strong>{guestName}</strong>
+                </div>
+              )}
+            </div> */}
+          </button>
+        </div>
       </div>
     </div>
   );
