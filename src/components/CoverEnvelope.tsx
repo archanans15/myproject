@@ -7,7 +7,7 @@ interface CoverEnvelopeProps {
   onOpen: () => void;
 }
 
-export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName, onOpen }) => {
+export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName: _guestName, onOpen }) => {
   const [isOpening, setIsOpening] = useState(false);
 
   const handleOpenClick = (e?: React.MouseEvent) => {
