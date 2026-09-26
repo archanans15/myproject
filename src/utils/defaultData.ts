@@ -8,7 +8,7 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
   groomParents: 'Mr. Murugan & Mrs. Sujatha',
   brideParents: 'Mr. Nadarajan & Mrs. Sushama',
   weddingDate: '2026-11-29T10:30:00',
-  weddingTimeFormatted: 'Sunday, November 29, 2026 at 10:30 AM',
+  weddingTimeFormatted: 'Sunday, November 29, 2026',
   tagline: 'Together With Their Families',
   welcomeMessage: 'We request the honour of your presence at the celebration of our sacred marriage union.',
   coupleBio: 'Two hearts, two souls, one beautiful journey starting forever.',
