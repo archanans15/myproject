@@ -6,7 +6,6 @@ import { CoverEnvelope } from './components/CoverEnvelope';
 import { MusicPlayer } from './components/MusicPlayer';
 import { HeroSection } from './components/HeroSection';
 import { GuestGreeting } from './components/GuestGreeting';
-import { CoupleStory } from './components/CoupleStory';
 import { EventTimeline } from './components/EventTimeline';
 import { PhotoGallery } from './components/PhotoGallery';
 import { BackgroundParticles } from './components/BackgroundParticles';
@@ -40,7 +39,6 @@ export const App: React.FC = () => {
       <main className="main-content">
         <HeroSection config={config} />
         <GuestGreeting config={config} guestName={guestName} />
-        <CoupleStory config={config} />
         <EventTimeline config={config} />
         <PhotoGallery gallery={config.gallery} />
       </main>
