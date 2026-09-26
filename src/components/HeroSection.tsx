@@ -39,20 +39,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
   }, [config.weddingDate]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 150);
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => observer.disconnect();
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -63,56 +54,75 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
       </div>
 
       <div className="hero-content container">
-        {/* Row 1: Save The Date Badge */}
+        {/* Line 1: Save The Date Badge */}
         <div
           className={`save-date-badge slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '0.1s' }}
+          style={{ animationDelay: '0.1s', transitionDelay: '0.1s' }}
         >
           <Calendar size={15} />
           <span>SAVE THE DATE</span>
         </div>
 
-        {/* Row 2: Tagline */}
+        {/* Line 2: Tagline */}
         <p
           className={`hero-tagline slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '0.3s' }}
+          style={{ animationDelay: '0.35s', transitionDelay: '0.35s' }}
         >
           {config.tagline}
         </p>
 
-        {/* Row 3: Couple Names */}
-        <h1
-          className={`hero-title slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '0.5s' }}
-        >
-          <span className="groom-name">{config.groomName}</span>
-          <span className="hero-ampersand">&</span>
-          <span className="bride-name">{config.brideName}</span>
+        {/* Line 3: Couple Names */}
+        <h1 className="hero-title">
+          <span
+            className={`groom-name slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: '0.6s', transitionDelay: '0.6s' }}
+          >
+            {config.groomName}
+          </span>
+          <span
+            className={`hero-ampersand slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: '0.85s', transitionDelay: '0.85s' }}
+          >
+            &
+          </span>
+          <span
+            className={`bride-name slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: '1.1s', transitionDelay: '1.1s' }}
+          >
+            {config.brideName}
+          </span>
         </h1>
 
-        {/* Row 4: Parents Names */}
-        <div
-          className={`parents-names-subtitle slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '0.7s' }}
-        >
-          <p className="parents-row">{config.groomTitle}</p>
-          <p className="parents-row">{config.brideTitle}</p>
+        {/* Line 4 & 5: Parents Lines (Staggered separately per line) */}
+        <div className="parents-names-subtitle">
+          <p
+            className={`parents-row slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: '1.35s', transitionDelay: '1.35s' }}
+          >
+            {config.groomTitle}
+          </p>
+          <p
+            className={`parents-row slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: '1.6s', transitionDelay: '1.6s' }}
+          >
+            {config.brideTitle}
+          </p>
         </div>
 
-        {/* Row 5: Formatted Wedding Date */}
+        {/* Line 6: Formatted Wedding Date */}
         <div
           className={`hero-date-wrapper slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '0.9s' }}
+          style={{ animationDelay: '1.85s', transitionDelay: '1.85s' }}
         >
           <div className="divider-line"></div>
           <p className="hero-formatted-date">{config.weddingTimeFormatted}</p>
           <div className="divider-line"></div>
         </div>
 
-        {/* Row 6: Countdown Box */}
+        {/* Line 7: Countdown Box */}
         <div
           className={`countdown-container slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '1.1s' }}
+          style={{ animationDelay: '2.1s', transitionDelay: '2.1s' }}
         >
           <div className="countdown-header">
             <Sparkles size={16} className="gold-icon icon-sparkle-spin" />
@@ -145,11 +155,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
           </div>
         </div>
 
-        {/* Row 7: Scroll Indicator */}
+        {/* Line 8: Scroll Indicator */}
         <a
           href="#invitation"
           className={`scroll-indicator slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-          style={{ transitionDelay: '1.3s' }}
+          style={{ animationDelay: '2.35s', transitionDelay: '2.35s' }}
           aria-label="Scroll to Invitation"
         >
           <span className="scroll-text">SCROLL FOR INVITATION</span>

@@ -40,7 +40,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
         <div className="events-combined-overlay">
           <div
             className={`save-date-badge slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-            style={{ transitionDelay: '0.1s' }}
+            style={{ animationDelay: '0.1s', transitionDelay: '0.1s' }}
           >
             <Heart size={15} className="gold-icon" />
             <span>WEDDING & RECEPTION</span>
@@ -51,33 +51,33 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
             <div className="compact-transparent-event event-top-left">
               <div
                 className={`event-title-badge slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.2s' }}
+                style={{ animationDelay: '0.25s', transitionDelay: '0.25s' }}
               >
                 <Sparkles size={14} className="gold-icon" />
                 <span>SACRED CEREMONY</span>
               </div>
               <h3
                 className={`event-simple-heading font-serif slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.4s' }}
+                style={{ animationDelay: '0.6s', transitionDelay: '0.6s' }}
               >
                 {muhurthamEvent.location}
               </h3>
               <p
                 className={`event-simple-sub font-sub slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.6s' }}
+                style={{ animationDelay: '0.95s', transitionDelay: '0.95s' }}
               >
                 {muhurthamEvent.address}
               </p>
               <p
                 className={`event-simple-meta slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.8s' }}
+                style={{ animationDelay: '1.3s', transitionDelay: '1.3s' }}
               >
                 Sunday, Nov 29 • 10:30 AM
               </p>
 
               <div
                 className={`slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '1.0s' }}
+                style={{ animationDelay: '1.65s', transitionDelay: '1.65s' }}
               >
                 <a
                   href={muhurthamEvent.mapUrl || config.venue.directionsUrl}
@@ -94,33 +94,33 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
             <div className="compact-transparent-event event-bottom-right">
               <div
                 className={`event-title-badge slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.3s' }}
+                style={{ animationDelay: '0.42s', transitionDelay: '0.42s' }}
               >
                 <Sparkles size={14} className="gold-icon" />
                 <span>GRAND RECEPTION</span>
               </div>
               <h3
                 className={`event-simple-heading font-serif slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.5s' }}
+                style={{ animationDelay: '0.77s', transitionDelay: '0.77s' }}
               >
                 {receptionEvent.location}
               </h3>
               <p
                 className={`event-simple-sub font-sub slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.7s' }}
+                style={{ animationDelay: '1.12s', transitionDelay: '1.12s' }}
               >
                 {receptionEvent.address}
               </p>
               <p
                 className={`event-simple-meta slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '0.9s' }}
+                style={{ animationDelay: '1.47s', transitionDelay: '1.47s' }}
               >
                 Sunday, Nov 29 • 06:30 PM Onwards
               </p>
 
               <div
                 className={`slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ transitionDelay: '1.1s' }}
+                style={{ animationDelay: '1.82s', transitionDelay: '1.82s' }}
               >
                 <a
                   href={receptionEvent.mapUrl || config.venue.directionsUrl}
@@ -136,7 +136,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
 
           <div
             className={`reception-footer-blessing margin-top-xs slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-            style={{ transitionDelay: '1.3s' }}
+            style={{ animationDelay: '2.1s', transitionDelay: '2.1s' }}
           >
             <Sparkles size={16} className="gold-icon margin-bottom-xs" />
             <p className="footer-blessing-text font-sub">We can't wait to celebrate with you!</p>

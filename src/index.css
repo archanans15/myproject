@@ -581,6 +581,7 @@ body, html {
   font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   text-transform: capitalize;
   letter-spacing: 0.5px;
+  display: inline-block;
 }
 
 .hero-ampersand {
@@ -588,6 +589,7 @@ body, html {
   font-style: italic;
   font-weight: 400;
   margin: 0 8px;
+  display: inline-block;
 }
 
 .parents-names-subtitle {
@@ -740,41 +742,62 @@ body, html {
   letter-spacing: 0.5px;
 } */
 
-/* Scroll Triggered Staggered Animations */
+/* Keyframe Animations for Guaranteed Smooth Animations */
+@keyframes keyframeFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes keyframeSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes keyframeSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .slow-fade-in-up {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .slow-fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
+  animation: keyframeFadeInUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .slow-slide-left {
   opacity: 0;
-  transform: translateX(-65px);
-  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .slow-slide-left.visible {
-  opacity: 1;
-  transform: translateX(0);
+  animation: keyframeSlideInLeft 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .slow-slide-right {
   opacity: 0;
-  transform: translateX(65px);
-  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .slow-slide-right.visible {
-  opacity: 1;
-  transform: translateX(0);
+  animation: keyframeSlideInRight 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Combined Events Section Layout (Wedding & Reception in 1 Section - Transparent / No Box) */
