@@ -18,9 +18,10 @@
   --glass-bg: rgba(26, 12, 18, 0.65);
   --glass-border: rgba(212, 175, 55, 0.25);
   --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.15);
-  --font-serif: 'Amita', cursive, 'Playfair Display', serif;
-  --font-sub: 'Amita', cursive, 'Cormorant Garamond', serif;
-  --font-sans: 'Amita', cursive, 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sub: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-amita: 'Amita', cursive;
   --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -910,6 +911,14 @@ body, html {
 }
 
 /* Invitation Section Styling */
+.invitation-section,
+.invitation-section .overlay-event-title,
+.invitation-section .invitation-blessing-quote,
+.invitation-section .guest-badge-label,
+.invitation-section .guest-name-highlight {
+  font-family: var(--font-amita);
+}
+
 .guest-welcome-badge {
   display: flex;
   flex-direction: column;
