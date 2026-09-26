@@ -37,15 +37,15 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
       subtitle: 'Evening Celebrations & Dinner',
       date: 'Sunday, November 29, 2026',
       time: '06:30 PM Onwards',
-      location: 'Imperial Auditorium',
+      location: 'The Nest & Meadows',
       address: 'Nagercoil',
-      mapUrl: 'https://maps.app.goo.gl/8e2YuSZCfpwRwf618?g_st=aw',
+      mapUrl: 'https://maps.app.goo.gl/ch3mG7PE8BH4AMnF9',
       dressCode: 'Formal Evening Wear / Festive Traditional',
       iconName: 'glass'
     }
   ],
   venue: {
-    name: 'Siva Sakthi Auditorium (Wedding) & Imperial Auditorium (Reception)',
+    name: 'Siva Sakthi Auditorium (Wedding) & The Nest & Meadows (Reception)',
     address: 'Wedding: Kaliyakkavilai | Reception: Nagercoil',
     city: 'Kaliyakkavilai & Nagercoil, Tamil Nadu',
     mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0!2d77.14!3d8.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMTknMTIuMCJOIDc3wrAwOCczNi4wIkU!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
