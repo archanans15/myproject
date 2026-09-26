@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ChevronDown, Sparkles } from 'lucide-react';
+import { Heart, ChevronDown } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
 interface InvitationSectionProps {
@@ -40,10 +40,7 @@ export const InvitationSection: React.FC<InvitationSectionProps> = ({ config, gu
             "With the blessings of our beloved families, we request the honour of your presence as we unite in holy matrimony."
           </p>
 
-          <div className="invitation-couple-signature">
-            <Sparkles size={18} className="gold-icon icon-glow margin-bottom-xs" />
-            <h3 className="signature-names font-serif">{config.groomName} & {config.brideName}</h3>
-          </div>
+
         </div>
 
         <a href="#ceremony" className="scroll-indicator margin-top-md" aria-label="Scroll to Ceremony">
