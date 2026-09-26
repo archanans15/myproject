@@ -7,7 +7,7 @@ interface InvitationSectionProps {
   guestName: string | null;
 }
 
-export const InvitationSection: React.FC<InvitationSectionProps> = ({ config, guestName }) => {
+export const InvitationSection: React.FC<InvitationSectionProps> = ({ config: _config, guestName }) => {
   return (
     <section className="snap-section invitation-section" id="invitation">
       {/* Traditional Indian Background Image */}
@@ -31,10 +31,6 @@ export const InvitationSection: React.FC<InvitationSectionProps> = ({ config, gu
 
           <h2 className="overlay-event-title font-serif">Welcome To Our Celebration</h2>
           <div className="title-underline"></div>
-
-          <p className="invitation-welcome-msg font-sub">
-            "{config.welcomeMessage}"
-          </p>
 
           <p className="invitation-blessing-quote font-sub">
             "With the blessings of our beloved families, we request the honour of your presence as we unite in holy matrimony."

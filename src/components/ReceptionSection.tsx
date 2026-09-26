@@ -67,7 +67,7 @@ export const ReceptionSection: React.FC<ReceptionSectionProps> = ({ config }) =>
           </div>
 
           <div className="reception-footer-blessing">
-            <Sparkles size={18} className="gold-icon icon-glow margin-bottom-xs" />
+            <Sparkles size={18} className="gold-icon  margin-bottom-xs" />
             <p className="footer-blessing-text font-sub">We can't wait to celebrate with you!</p>
             <h4 className="footer-couple-names">{config.groomName} & {config.brideName}</h4>
           </div>

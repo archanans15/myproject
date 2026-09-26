@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
 
 :root {
   /* Royal Gold & Crimson Theme (Default) */
@@ -18,9 +18,9 @@
   --glass-bg: rgba(26, 12, 18, 0.65);
   --glass-border: rgba(212, 175, 55, 0.25);
   --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.15);
-  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  --font-sub: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Amita', cursive, 'Playfair Display', serif;
+  --font-sub: 'Amita', cursive, 'Cormorant Garamond', serif;
+  --font-sans: 'Amita', cursive, 'Montserrat', sans-serif;
   --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -686,7 +686,7 @@ body, html {
 
 .countdown-number {
   font-family: var(--font-serif);
-  font-size: 1.55rem;
+  font-size: 2.3rem;
   font-weight: 700;
   color: var(--accent-gold-light);
   line-height: 1;
@@ -728,13 +728,13 @@ body, html {
   margin: 2px 0 12px;
 }
 
-.parents-row {
+/* .parents-row {
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: 1.4;
   font-family: var(--font-sub);
   letter-spacing: 0.5px;
-}
+} */
 
 /* Direct Text Overlay Layout for Ceremony & Reception Sections (No Box / No Borders) */
 .event-overlay-content {
@@ -816,23 +816,16 @@ body, html {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-.invitation-welcome-msg {
-  font-size: 1.12rem;
-  color: var(--text-primary);
-  line-height: 1.6;
-  margin: 16px 0 12px;
-  max-width: 96%;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
-  font-style: italic;
-}
+
 
 .invitation-blessing-quote {
-  font-size: 0.96rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   line-height: 1.55;
   margin-bottom: 20px;
   max-width: 92%;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  margin-top: 2rem;
 }
 
 .invitation-couple-signature {
