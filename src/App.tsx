@@ -4,6 +4,7 @@ import { getSavedConfig, getGuestNameFromUrl } from './utils/storage';
 import { CoverEnvelope } from './components/CoverEnvelope';
 import { MusicPlayer } from './components/MusicPlayer';
 import { HeroSection } from './components/HeroSection';
+import { InvitationSection } from './components/InvitationSection';
 import { CeremonySection } from './components/CeremonySection';
 import { ReceptionSection } from './components/ReceptionSection';
 
@@ -33,6 +34,7 @@ export const App: React.FC = () => {
 
       <main className="main-content">
         <HeroSection config={config} />
+        <InvitationSection config={config} guestName={guestName} />
         <CeremonySection config={config} />
         <ReceptionSection config={config} />
       </main>

@@ -100,8 +100,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
           </div>
         </div>
 
-        <a href="#ceremony" className="scroll-indicator animate-fade-up" aria-label="Scroll to Ceremony">
-          <span className="scroll-text">SCROLL FOR CEREMONY</span>
+        <a href="#invitation" className="scroll-indicator animate-fade-up" aria-label="Scroll to Invitation">
+          <span className="scroll-text">SCROLL FOR INVITATION</span>
           <ChevronDown className="bounce-arrow" size={20} />
         </a>
       </div>
