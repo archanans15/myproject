@@ -68,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
           <div className="divider-line"></div>
         </div>
 
-        <div className="countdown-container glass-morphism animate-fade-up">
+        <div className="countdown-container animate-fade-up">
           <div className="countdown-header">
             <Sparkles size={16} className="gold-icon icon-sparkle-spin" />
             <span className="countdown-header-title">COUNTDOWN TO THE BIG DAY</span>
