@@ -764,11 +764,11 @@ body, html {
 }
 
 .single-event-compact-card {
-  width: 100%;
+  width: 90%;
   padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(14, 6, 10, 0.65);
-  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(14, 6, 10, 0.68);
+  border: 1px solid rgba(212, 175, 55, 0.32);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   text-align: center;
@@ -776,6 +776,16 @@ body, html {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.single-event-compact-card.event-top-left {
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.single-event-compact-card.event-bottom-right {
+  align-self: flex-end;
+  margin-left: auto;
 }
 
 .compact-event-badge {

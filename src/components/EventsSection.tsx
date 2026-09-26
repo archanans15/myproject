@@ -25,8 +25,8 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
           </div>
 
           <div className="events-dual-grid">
-            {/* Muhurtham Event Card */}
-            <div className="single-event-compact-card">
+            {/* Muhurtham Event Card - Top Left */}
+            <div className="single-event-compact-card event-top-left">
               <div className="compact-event-badge">
                 <Sparkles size={13} className="gold-icon" />
                 <span>SACRED CEREMONY</span>
@@ -57,8 +57,8 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
               </a>
             </div>
 
-            {/* Reception Event Card */}
-            <div className="single-event-compact-card">
+            {/* Reception Event Card - Bottom Right */}
+            <div className="single-event-compact-card event-bottom-right">
               <div className="compact-event-badge">
                 <Sparkles size={13} className="gold-icon" />
                 <span>RECEPTION</span>
