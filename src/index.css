@@ -956,10 +956,12 @@ body, html {
 }
 
 .footer-couple-names {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--accent-gold-light);
   margin-top: 2px;
+  letter-spacing: 0.5px;
 }
 
 /* Greeting Section */
