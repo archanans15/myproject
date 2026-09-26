@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Heart, ExternalLink } from 'lucide-react';
+import { Sparkles, Heart} from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
 interface EventsSectionProps {
