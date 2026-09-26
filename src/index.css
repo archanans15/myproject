@@ -740,35 +740,41 @@ body, html {
   letter-spacing: 0.5px;
 } */
 
-/* Slide In Keyframe Animations for Events Section */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Scroll Triggered Staggered Animations */
+.slow-fade-in-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.slow-fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.animate-slide-left {
-  animation: slideInFromLeft 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.slow-slide-left {
+  opacity: 0;
+  transform: translateX(-65px);
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
-.animate-slide-right {
-  animation: slideInFromRight 0.85s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards;
+.slow-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slow-slide-right {
+  opacity: 0;
+  transform: translateX(65px);
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.slow-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Combined Events Section Layout (Wedding & Reception in 1 Section - Transparent / No Box) */

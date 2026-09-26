@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, ChevronDown, Sparkles } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
@@ -15,6 +15,8 @@ interface TimeLeft {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -36,39 +38,82 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
     return () => clearInterval(timer);
   }, [config.weddingDate]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="snap-section hero-section" id="hero">
+    <section className="snap-section hero-section" id="hero" ref={heroRef}>
       {/* Temple Gopuram Background Image */}
       <div className="section-bg-image" style={{ backgroundImage: `url('images/temple-gopuram-bg.jpg')` }}>
         <div className="section-overlay-gradient"></div>
       </div>
 
       <div className="hero-content container">
-        <div className="save-date-badge animate-fade-down">
+        {/* Row 1: Save The Date Badge */}
+        <div
+          className={`save-date-badge slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '0.1s' }}
+        >
           <Calendar size={15} />
           <span>SAVE THE DATE</span>
         </div>
 
-        <p className="hero-tagline animate-fade-up">{config.tagline}</p>
+        {/* Row 2: Tagline */}
+        <p
+          className={`hero-tagline slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '0.3s' }}
+        >
+          {config.tagline}
+        </p>
 
-        <h1 className="hero-title animate-zoom-in">
+        {/* Row 3: Couple Names */}
+        <h1
+          className={`hero-title slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '0.5s' }}
+        >
           <span className="groom-name">{config.groomName}</span>
           <span className="hero-ampersand">&</span>
           <span className="bride-name">{config.brideName}</span>
         </h1>
 
-        <div className="parents-names-subtitle animate-fade-up">
+        {/* Row 4: Parents Names */}
+        <div
+          className={`parents-names-subtitle slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '0.7s' }}
+        >
           <p className="parents-row">{config.groomTitle}</p>
           <p className="parents-row">{config.brideTitle}</p>
         </div>
 
-        <div className="hero-date-wrapper animate-fade-up">
+        {/* Row 5: Formatted Wedding Date */}
+        <div
+          className={`hero-date-wrapper slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '0.9s' }}
+        >
           <div className="divider-line"></div>
           <p className="hero-formatted-date">{config.weddingTimeFormatted}</p>
           <div className="divider-line"></div>
         </div>
 
-        <div className="countdown-container animate-fade-up">
+        {/* Row 6: Countdown Box */}
+        <div
+          className={`countdown-container slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '1.1s' }}
+        >
           <div className="countdown-header">
             <Sparkles size={16} className="gold-icon icon-sparkle-spin" />
             <span className="countdown-header-title">COUNTDOWN TO THE BIG DAY</span>
@@ -100,7 +145,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
           </div>
         </div>
 
-        <a href="#invitation" className="scroll-indicator animate-fade-up" aria-label="Scroll to Invitation">
+        {/* Row 7: Scroll Indicator */}
+        <a
+          href="#invitation"
+          className={`scroll-indicator slow-fade-in-up ${isVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: '1.3s' }}
+          aria-label="Scroll to Invitation"
+        >
           <span className="scroll-text">SCROLL FOR INVITATION</span>
           <ChevronDown className="bounce-arrow" size={20} />
         </a>
