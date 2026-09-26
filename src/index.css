@@ -891,26 +891,46 @@ body, html {
 
 @media (max-width: 640px) {
   .events-combined-overlay {
-    max-width: 440px;
+    max-width: 100%;
+    padding: 4px 2px;
   }
   
   .event-block-card {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px 8px;
   }
   
-  .reception-block-grid .event-map-container {
-    order: 2;
+  .event-map-container {
+    height: 135px;
   }
   
-  .reception-block-grid .event-block-details {
-    order: 1;
+  .map-floating-link-badge {
+    top: 6px;
+    left: 6px;
+    padding: 4px 7px;
+    font-size: 0.68rem;
   }
 
-  .event-block-details {
-    align-items: center;
-    text-align: center;
+  .event-title-badge {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .event-simple-heading {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .event-simple-sub {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+
+  .event-simple-meta {
+    font-size: 0.78rem;
   }
 }
 
