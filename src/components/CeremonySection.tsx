@@ -17,46 +17,46 @@ export const CeremonySection: React.FC<CeremonySectionProps> = ({ config }) => {
       </div>
 
       <div className="section-container container">
-        <div className="event-full-card glass-morphism animate-zoom-in">
-          <div className="event-badge">
-            <Sparkles size={15} className="gold-icon" />
+        <div className="event-overlay-content animate-zoom-in">
+          <div className="save-date-badge">
+            <Sparkles size={14} className="gold-icon" />
             <span>SACRED CEREMONY</span>
           </div>
 
-          <h2 className="event-card-title">{muhurthamEvent.title}</h2>
-          <p className="event-card-subtitle font-sub">{muhurthamEvent.subtitle}</p>
+          <h2 className="overlay-event-title">{muhurthamEvent.title}</h2>
+          <p className="overlay-event-subtitle font-sub">{muhurthamEvent.subtitle}</p>
 
           <div className="title-underline"></div>
 
-          <div className="event-card-details">
-            <div className="card-detail-item">
+          <div className="overlay-details-list">
+            <div className="overlay-detail-item">
               <Calendar size={18} className="gold-icon" />
-              <div>
+              <div className="detail-text-group">
                 <span className="detail-label-text">Date</span>
                 <p className="detail-value-text">{muhurthamEvent.date}</p>
               </div>
             </div>
 
-            <div className="card-detail-item">
+            <div className="overlay-detail-item">
               <Clock size={18} className="gold-icon" />
-              <div>
+              <div className="detail-text-group">
                 <span className="detail-label-text">Time</span>
                 <p className="detail-value-text">{muhurthamEvent.time}</p>
               </div>
             </div>
 
-            <div className="card-detail-item">
+            <div className="overlay-detail-item">
               <MapPin size={18} className="gold-icon" />
-              <div>
+              <div className="detail-text-group">
                 <span className="detail-label-text">Venue</span>
-                <p className="detail-value-text font-weight-bold">{muhurthamEvent.location}</p>
+                <p className="detail-value-text">{muhurthamEvent.location}</p>
                 <p className="detail-sub-text">{muhurthamEvent.address}</p>
               </div>
             </div>
           </div>
 
           {muhurthamEvent.dressCode && (
-            <div className="dress-code-pill">
+            <div className="dress-code-pill margin-bottom-sm">
               <Sparkles size={13} className="gold-icon" />
               <span>Dress Code: {muhurthamEvent.dressCode}</span>
             </div>
