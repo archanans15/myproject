@@ -37,40 +37,44 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
   }, [config.weddingDate]);
 
   return (
-    <section className="hero-section" id="hero">
-      <div className="hero-background-image" style={{ backgroundImage: `url(${config.coupleHeroPhoto})` }}>
-        <div className="hero-overlay-gradient"></div>
+    <section className="snap-section hero-section" id="hero">
+      {/* Temple Gopuram Background Image */}
+      <div className="section-bg-image" style={{ backgroundImage: `url('images/temple-gopuram-bg.jpg')` }}>
+        <div className="section-overlay-gradient"></div>
       </div>
 
       <div className="hero-content container">
-        <div className="save-date-badge animate-fade-down" style={{ animationDelay: '0.2s' }}>
-          <Calendar size={16} />
+        <div className="save-date-badge animate-fade-down">
+          <Calendar size={15} />
           <span>SAVE THE DATE</span>
         </div>
 
-        <p className="hero-tagline animate-fade-up" style={{ animationDelay: '0.4s' }}>{config.tagline}</p>
+        <p className="hero-tagline animate-fade-up">{config.tagline}</p>
 
-        <h1 className="hero-title animate-zoom-in" style={{ animationDelay: '0.6s' }}>
+        <h1 className="hero-title animate-zoom-in">
           <span className="groom-name">{config.groomName}</span>
           <span className="hero-ampersand">&</span>
           <span className="bride-name">{config.brideName}</span>
         </h1>
 
-        <div className="hero-date-wrapper animate-fade-up" style={{ animationDelay: '0.8s' }}>
+        <div className="parents-names-subtitle animate-fade-up">
+          <p className="parents-row">{config.groomTitle}</p>
+          <p className="parents-row">{config.brideTitle}</p>
+        </div>
+
+        <div className="hero-date-wrapper animate-fade-up">
           <div className="divider-line"></div>
           <p className="hero-formatted-date">{config.weddingTimeFormatted}</p>
           <div className="divider-line"></div>
         </div>
 
-        <p className="hero-welcome-msg animate-fade-up" style={{ animationDelay: '1.0s' }}>{config.welcomeMessage}</p>
-
-        <div className="countdown-container glass-morphism animate-fade-up" style={{ animationDelay: '1.2s' }}>
+        <div className="countdown-container glass-morphism animate-fade-up">
           <div className="countdown-header">
-            <Sparkles size={18} className="gold-icon icon-sparkle-spin" />
+            <Sparkles size={16} className="gold-icon icon-sparkle-spin" />
             <span className="countdown-header-title">COUNTDOWN TO THE BIG DAY</span>
-            <Sparkles size={18} className="gold-icon icon-sparkle-spin" />
+            <Sparkles size={16} className="gold-icon icon-sparkle-spin" />
           </div>
-          
+
           <div className="countdown-grid">
             <div className="countdown-box">
               <span className="countdown-number">{String(timeLeft.days).padStart(2, '0')}</span>
@@ -96,9 +100,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
           </div>
         </div>
 
-        <a href="#greeting" className="scroll-indicator animate-fade-up" style={{ animationDelay: '1.4s' }} aria-label="Scroll Down">
-          <span className="scroll-text">SCROLL TO DISCOVER</span>
-          <ChevronDown className="bounce-arrow" size={24} />
+        <a href="#ceremony" className="scroll-indicator animate-fade-up" aria-label="Scroll to Ceremony">
+          <span className="scroll-text">SCROLL FOR CEREMONY</span>
+          <ChevronDown className="bounce-arrow" size={20} />
         </a>
       </div>
     </section>

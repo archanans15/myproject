@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
 import type { WeddingConfig } from './types/invitation';
 import { getSavedConfig, getGuestNameFromUrl } from './utils/storage';
 import { CoverEnvelope } from './components/CoverEnvelope';
 import { MusicPlayer } from './components/MusicPlayer';
 import { HeroSection } from './components/HeroSection';
-import { EventTimeline } from './components/EventTimeline';
-import { PhotoGallery } from './components/PhotoGallery';
-import { BackgroundParticles } from './components/BackgroundParticles';
+import { CeremonySection } from './components/CeremonySection';
+import { ReceptionSection } from './components/ReceptionSection';
 
 export const App: React.FC = () => {
   const [config] = useState<WeddingConfig>(getSavedConfig());
@@ -29,34 +27,18 @@ export const App: React.FC = () => {
 
   return (
     <div className={`app-root theme-${config.theme}`}>
-      <BackgroundParticles />
-
       {!isOpened && (
         <CoverEnvelope config={config} guestName={guestName} onOpen={handleOpenInvitation} />
       )}
 
       <main className="main-content">
         <HeroSection config={config} />
-        <EventTimeline config={config} />
-        <PhotoGallery gallery={config.gallery} />
+        <CeremonySection config={config} />
+        <ReceptionSection config={config} />
       </main>
 
       {isOpened && (
-        <>
-          <footer className="site-footer text-center glass-morphism">
-            <div className="container">
-              <Sparkles size={24} className="gold-icon margin-bottom-sm" />
-              <h3 className="footer-title">{config.groomName} & {config.brideName}</h3>
-              <p className="footer-sub font-sub">We can't wait to celebrate with you!</p>
-              <div className="footer-divider"></div>
-              <p className="footer-copyright font-sub">
-                © {new Date().getFullYear()} Digital Wedding Invitation • Rakesh & Archana
-              </p>
-            </div>
-          </footer>
-
-          <MusicPlayer musicUrl={config.bgMusicUrl} autoPlayTriggered={autoPlayMusic} />
-        </>
+        <MusicPlayer musicUrl={config.bgMusicUrl} autoPlayTriggered={autoPlayMusic} />
       )}
     </div>
   );
