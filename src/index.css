@@ -740,49 +740,141 @@ body, html {
   letter-spacing: 0.5px;
 } */
 
-/* Combined Events Section Layout (Wedding & Reception in 1 Section) */
+/* Slide In Keyframe Animations for Events Section */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInFromRight 0.85s cubic-bezier(0.25, 1, 0.5, 1) 0.15s forwards;
+}
+
+/* Combined Events Section Layout (Wedding & Reception in 1 Section - Transparent / No Box) */
 .events-combined-overlay {
   width: 100%;
-  max-width: 410px;
-  padding: 8px 6px;
+  max-width: 420px;
+  padding: 8px 4px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(-20px);
 }
 
 .events-dual-grid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   width: 100%;
-  margin: 10px 0 8px;
+  margin: 14px 0 10px;
 }
 
-.single-event-compact-card {
-  width: 90%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(14, 6, 10, 0.68);
-  border: 1px solid rgba(212, 175, 55, 0.32);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  text-align: center;
+.compact-transparent-event {
+  width: 88%;
+  padding: 10px 6px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
-.single-event-compact-card.event-top-left {
+.compact-transparent-event.event-top-left {
   align-self: flex-start;
   margin-right: auto;
+  align-items: flex-start;
+  text-align: left;
 }
 
-.single-event-compact-card.event-bottom-right {
+.compact-transparent-event.event-bottom-right {
   align-self: flex-end;
   margin-left: auto;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.event-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.event-simple-heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.event-simple-sub {
+  font-size: 0.95rem;
+  color: var(--accent-gold-light);
+  margin-bottom: 4px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.event-simple-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.btn-simple-map-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-gold);
+  background: rgba(18, 8, 14, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+.btn-simple-map-gold:hover {
+  background: var(--accent-gold);
+  color: #000;
 }
 
 .compact-event-badge {
