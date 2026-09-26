@@ -10,9 +10,9 @@ interface InvitationSectionProps {
 export const InvitationSection: React.FC<InvitationSectionProps> = ({ config: _config, guestName }) => {
   return (
     <section className="snap-section invitation-section" id="invitation">
-      {/* Traditional Indian Background Image */}
-      <div className="section-bg-image" style={{ backgroundImage: `url('images/welcome-bg.jpg')` }}>
-        <div className="section-overlay-gradient welcome-overlay-gradient"></div>
+      {/* Couple Photo Background */}
+      <div className="section-bg-image" style={{ backgroundImage: `url(${_config.coupleHeroPhoto})` }}>
+        <div className="section-overlay-gradient"></div>
       </div>
 
       <div className="section-container container">

@@ -12,9 +12,9 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
 
   return (
     <section className="snap-section events-section" id="events">
-      {/* Couple Photo Background */}
-      <div className="section-bg-image" style={{ backgroundImage: `url(${config.coupleHeroPhoto})` }}>
-        <div className="section-overlay-gradient"></div>
+      {/* Traditional Indian Background Image */}
+      <div className="section-bg-image" style={{ backgroundImage: `url('images/welcome-bg.jpg')` }}>
+        <div className="section-overlay-gradient welcome-overlay-gradient"></div>
       </div>
 
       <div className="section-container container">
