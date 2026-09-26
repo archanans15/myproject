@@ -536,33 +536,33 @@ body, html {
   background: #1a0c12;
   border: 1px solid rgba(212, 175, 55, 0.35);
   color: var(--accent-gold-light);
-  padding: 8px 20px;
+  padding: 9px 22px;
   border-radius: 24px;
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .hero-tagline {
   font-family: var(--font-sub);
-  font-size: 1.1rem;
+  font-size: 1.22rem;
   color: var(--text-secondary);
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 2.7rem;
+  font-size: 3.0rem;
   font-weight: 700;
-  line-height: 1.15;
-  margin: 12px 0 14px;
+  line-height: 1.12;
+  margin: 10px 0 12px;
   color: var(--text-primary);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 0 12px rgba(212, 175, 55, 0.45);
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.95), 0 0 14px rgba(212, 175, 55, 0.5);
 }
 
 .hero-ampersand {
@@ -576,26 +576,39 @@ body, html {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 14px 0;
+  margin: 12px 0 14px;
 }
 
 .divider-line {
-  width: 44px;
+  width: 48px;
   height: 1px;
   background: var(--accent-gold);
 }
 
 .hero-formatted-date {
   font-family: var(--font-sub);
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   color: var(--accent-gold-light);
   letter-spacing: 0.8px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
+.parents-names-subtitle {
+  text-align: center;
+  margin: 2px 0 10px;
+}
+
+.parents-row {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-family: var(--font-sub);
+  letter-spacing: 0.5px;
+}
+
 .hero-welcome-msg {
   max-width: 95%;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: var(--text-secondary);
   margin-top: 6px;
   margin-bottom: 24px;
@@ -605,14 +618,15 @@ body, html {
 /* Countdown Grid & Component Styles (Border & Background Removed from Outer Container) */
 .countdown-container {
   padding: 4px 6px;
-  margin-bottom: 18px;
+  margin-top: 14px;
+  margin-bottom: 22px;
   background: transparent;
   border: none;
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .countdown-header {
@@ -620,10 +634,10 @@ body, html {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 1.2px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .countdown-header-title {
@@ -638,42 +652,42 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 7px;
 }
 
 .countdown-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 44px;
-  padding: 6px 5px;
-  border-radius: 10px;
-  background: rgba(20, 9, 15, 0.55);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  min-width: 52px;
+  padding: 8px 6px;
+  border-radius: 12px;
+  background: rgba(20, 9, 15, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
 }
 
 .countdown-number {
   font-family: var(--font-serif);
-  font-size: 1.28rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--accent-gold-light);
   line-height: 1;
 }
 
 .countdown-label {
-  font-size: 0.54rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 0.6px;
-  margin-top: 2px;
+  letter-spacing: 0.8px;
+  margin-top: 3px;
 }
 
 .countdown-colon {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   color: var(--accent-gold);
   align-self: center;
 }

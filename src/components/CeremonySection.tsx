@@ -55,13 +55,6 @@ export const CeremonySection: React.FC<CeremonySectionProps> = ({ config }) => {
             </div>
           </div>
 
-          {muhurthamEvent.dressCode && (
-            <div className="dress-code-pill margin-bottom-sm">
-              <Sparkles size={13} className="gold-icon" />
-              <span>Dress Code: {muhurthamEvent.dressCode}</span>
-            </div>
-          )}
-
           <div className="event-action-button">
             <a
               href={muhurthamEvent.mapUrl || config.venue.directionsUrl}

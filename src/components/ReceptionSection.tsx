@@ -55,13 +55,6 @@ export const ReceptionSection: React.FC<ReceptionSectionProps> = ({ config }) =>
             </div>
           </div>
 
-          {receptionEvent.dressCode && (
-            <div className="dress-code-pill margin-bottom-sm">
-              <Sparkles size={13} className="gold-icon" />
-              <span>Dress Code: {receptionEvent.dressCode}</span>
-            </div>
-          )}
-
           <div className="event-action-button">
             <a
               href={receptionEvent.mapUrl || config.venue.directionsUrl}
