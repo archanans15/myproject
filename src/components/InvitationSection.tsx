@@ -14,9 +14,7 @@ export const InvitationSection: React.FC<InvitationSectionProps> = ({ config: _c
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.15 }
     );

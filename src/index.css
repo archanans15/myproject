@@ -507,22 +507,16 @@ body, html {
 }
 
 .hero-section .section-overlay-gradient,
-.hero-overlay-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(10, 4, 7, 0.32) 0%, rgba(15, 7, 10, 0.48) 55%, rgba(10, 4, 7, 0.78) 100%);
-}
-
+.invitation-section .section-overlay-gradient,
+.events-section .section-overlay-gradient,
+.hero-overlay-gradient,
 .welcome-overlay-gradient {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(10, 4, 7, 0.18) 0%, rgba(15, 7, 10, 0.38) 50%, rgba(10, 4, 7, 0.55) 100%);
+  background: linear-gradient(180deg, rgba(10, 4, 7, 0.42) 0%, rgba(15, 7, 10, 0.62) 50%, rgba(10, 4, 7, 0.82) 100%);
 }
 
 .hero-content {
@@ -800,10 +794,10 @@ body, html {
   animation: keyframeSlideInRight 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Combined Events Section Layout (Wedding & Reception in 1 Section - Transparent / No Box) */
+/* Combined Events Section Layout (Divided into Wedding & Reception Cards with Maps) */
 .events-combined-overlay {
   width: 100%;
-  max-width: 420px;
+  max-width: 680px;
   padding: 8px 4px;
   text-align: center;
   display: flex;
@@ -811,38 +805,113 @@ body, html {
   align-items: center;
 }
 
-.events-dual-grid {
+.events-blocks-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   width: 100%;
-  margin: 14px 0 10px;
+  margin: 12px 0 8px;
 }
 
-.compact-transparent-event {
-  width: 88%;
-  padding: 10px 6px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+.event-block-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px;
+  background: rgba(18, 8, 14, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.event-block-details {
   display: flex;
   flex-direction: column;
-}
-
-.compact-transparent-event.event-top-left {
-  align-self: flex-start;
-  margin-right: auto;
   align-items: flex-start;
   text-align: left;
 }
 
-.compact-transparent-event.event-bottom-right {
-  align-self: flex-end;
-  margin-left: auto;
-  align-items: flex-end;
-  text-align: right;
+.event-right-align {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.event-map-container {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65), 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.event-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.map-floating-link-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a73e8;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.map-floating-link-badge:hover {
+  background: #ffffff;
+  color: #1557b0;
+  transform: translateY(-1px);
+}
+
+.events-divider-line {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: 2px auto;
+}
+
+@media (max-width: 640px) {
+  .events-combined-overlay {
+    max-width: 440px;
+  }
+  
+  .event-block-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 10px;
+  }
+  
+  .reception-block-grid .event-map-container {
+    order: 2;
+  }
+  
+  .reception-block-grid .event-block-details {
+    order: 1;
+  }
+
+  .event-block-details {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .event-title-badge {
@@ -878,9 +947,22 @@ body, html {
 .event-simple-meta {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 0;
   font-weight: 500;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.event-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.event-meta-row .event-simple-meta {
+  margin-bottom: 0;
 }
 
 .btn-simple-map-gold {

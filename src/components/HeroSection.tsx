@@ -39,11 +39,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config }) => {
   }, [config.weddingDate]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 150);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.15 }
+    );
 
-    return () => clearTimeout(timer);
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (

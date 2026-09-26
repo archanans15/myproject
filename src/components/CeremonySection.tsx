@@ -20,7 +20,7 @@ export const CeremonySection: React.FC<CeremonySectionProps> = ({ config }) => {
         <div className="event-overlay-content animate-zoom-in">
           <div className="save-date-badge">
             <Sparkles size={14} className="gold-icon" />
-            <span>SACRED CEREMONY</span>
+            <span>MUHURTHAM</span>
           </div>
 
           <h2 className="overlay-event-title">{muhurthamEvent.title}</h2>

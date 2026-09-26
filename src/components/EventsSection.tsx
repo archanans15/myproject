@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MapPin, Sparkles, Heart } from 'lucide-react';
+import { Sparkles, Heart, ExternalLink } from 'lucide-react';
 import type { WeddingConfig } from '../types/invitation';
 
 interface EventsSectionProps {
@@ -15,9 +15,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.15 }
     );
@@ -29,15 +27,24 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
     return () => observer.disconnect();
   }, []);
 
+  const muhurthamMapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(
+    `${muhurthamEvent.location}, ${muhurthamEvent.address}`
+  )}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
+  const receptionMapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(
+    `${receptionEvent.location}, ${receptionEvent.address}`
+  )}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
   return (
     <section className="snap-section events-section" id="events" ref={sectionRef}>
-      {/* Traditional Indian Background Image */}
+      {/* Background Image */}
       <div className="section-bg-image" style={{ backgroundImage: `url('images/welcome-bg.jpg')` }}>
         <div className="section-overlay-gradient welcome-overlay-gradient"></div>
       </div>
 
       <div className="section-container container">
         <div className="events-combined-overlay">
+          {/* Main Title Badge */}
           <div
             className={`save-date-badge slow-fade-in-up ${isVisible ? 'visible' : ''}`}
             style={{ animationDelay: '0.1s', transitionDelay: '0.1s' }}
@@ -46,97 +53,99 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
             <span>WEDDING & RECEPTION</span>
           </div>
 
-          <div className="events-dual-grid">
-            {/* Muhurtham Event - Top Left (Slide in from Left row-by-row on Scroll) */}
-            <div className="compact-transparent-event event-top-left">
-              <div
-                className={`event-title-badge slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '0.25s', transitionDelay: '0.25s' }}
-              >
-                <Sparkles size={14} className="gold-icon" />
-                <span>SACRED CEREMONY</span>
+          <div className="events-blocks-container">
+            {/* SECTION BLOCK 1: WEDDING CEREMONY BOX (Entire Card slides in from Left) */}
+            <div
+              className={`event-block-card wedding-block-grid slow-slide-left ${isVisible ? 'visible' : ''}`}
+              style={{ animationDelay: '0.25s', transitionDelay: '0.25s' }}
+            >
+              {/* Left Column: Details */}
+              <div className="event-block-details">
+                <div className="event-title-badge">
+                  <Sparkles size={14} className="gold-icon" />
+                  <span>MUHURTHAM</span>
+                </div>
+                <h3 className="event-simple-heading font-serif">
+                  {muhurthamEvent.location}
+                </h3>
+                <p className="event-simple-sub font-sub">
+                  {muhurthamEvent.address}
+                </p>
+                <p className="event-simple-meta">
+                  Sunday, Nov 29 • 10:30 AM
+                </p>
               </div>
-              <h3
-                className={`event-simple-heading font-serif slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '0.6s', transitionDelay: '0.6s' }}
-              >
-                {muhurthamEvent.location}
-              </h3>
-              <p
-                className={`event-simple-sub font-sub slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '0.95s', transitionDelay: '0.95s' }}
-              >
-                {muhurthamEvent.address}
-              </p>
-              <p
-                className={`event-simple-meta slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '1.3s', transitionDelay: '1.3s' }}
-              >
-                Sunday, Nov 29 • 10:30 AM
-              </p>
 
-              <div
-                className={`slow-slide-left ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '1.65s', transitionDelay: '1.65s' }}
-              >
+              {/* Right Column: Small Map View */}
+              <div className="event-map-container map-right-frame">
                 <a
                   href={muhurthamEvent.mapUrl || config.venue.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-simple-map-gold"
+                  className="map-floating-link-badge"
                 >
-                  <MapPin size={13} /> View Map
+                  <span>Open in Maps</span>
+                  <ExternalLink size={12} />
                 </a>
+                <iframe
+                  title="Wedding Venue Map"
+                  src={muhurthamMapEmbed}
+                  className="event-map-iframe"
+                  loading="lazy"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
 
-            {/* Reception Event - Bottom Right (Slide in from Right row-by-row on Scroll) */}
-            <div className="compact-transparent-event event-bottom-right">
-              <div
-                className={`event-title-badge slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '0.42s', transitionDelay: '0.42s' }}
-              >
-                <Sparkles size={14} className="gold-icon" />
-                <span>GRAND RECEPTION</span>
-              </div>
-              <h3
-                className={`event-simple-heading font-serif slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '0.77s', transitionDelay: '0.77s' }}
-              >
-                {receptionEvent.location}
-              </h3>
-              <p
-                className={`event-simple-sub font-sub slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '1.12s', transitionDelay: '1.12s' }}
-              >
-                {receptionEvent.address}
-              </p>
-              <p
-                className={`event-simple-meta slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '1.47s', transitionDelay: '1.47s' }}
-              >
-                Sunday, Nov 29 • 06:30 PM Onwards
-              </p>
+            <div className="events-divider-line"></div>
 
-              <div
-                className={`slow-slide-right ${isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: '1.82s', transitionDelay: '1.82s' }}
-              >
+            {/* SECTION BLOCK 2: GRAND RECEPTION BOX (Entire Card slides in from Right) */}
+            <div
+              className={`event-block-card reception-block-grid slow-slide-right ${isVisible ? 'visible' : ''}`}
+              style={{ animationDelay: '0.45s', transitionDelay: '0.45s' }}
+            >
+              {/* Left Column: Small Map View */}
+              <div className="event-map-container map-left-frame">
                 <a
                   href={receptionEvent.mapUrl || config.venue.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-simple-map-gold"
+                  className="map-floating-link-badge"
                 >
-                  <MapPin size={13} /> View Map
+                  <span>Open in Maps</span>
+                  <ExternalLink size={12} />
                 </a>
+                <iframe
+                  title="Reception Venue Map"
+                  src={receptionMapEmbed}
+                  className="event-map-iframe"
+                  loading="lazy"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              {/* Right Column: Details */}
+              <div className="event-block-details event-right-align">
+                <div className="event-title-badge">
+                  <Sparkles size={14} className="gold-icon" />
+                  <span>GRAND RECEPTION</span>
+                </div>
+                <h3 className="event-simple-heading font-serif">
+                  {receptionEvent.location}
+                </h3>
+                <p className="event-simple-sub font-sub">
+                  {receptionEvent.address}
+                </p>
+                <p className="event-simple-meta">
+                  Sunday, Nov 29 • 06:30 PM Onwards
+                </p>
               </div>
             </div>
           </div>
 
           <div
             className={`reception-footer-blessing margin-top-xs slow-fade-in-up ${isVisible ? 'visible' : ''}`}
-            style={{ animationDelay: '2.1s', transitionDelay: '2.1s' }}
+            style={{ animationDelay: '0.65s', transitionDelay: '0.65s' }}
           >
             <Sparkles size={16} className="gold-icon margin-bottom-xs" />
             <p className="footer-blessing-text font-sub">We can't wait to celebrate with you!</p>
