@@ -78,15 +78,6 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
 
               {/* Right Column: Small Map View */}
               <div className="event-map-container map-right-frame">
-                <a
-                  href={muhurthamEvent.mapUrl || config.venue.directionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="map-floating-link-badge"
-                >
-                  <span>Open in Maps</span>
-                  <ExternalLink size={12} />
-                </a>
                 <iframe
                   title="Wedding Venue Map"
                   src={muhurthamMapEmbed}
@@ -106,15 +97,6 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ config }) => {
             >
               {/* Left Column: Small Map View */}
               <div className="event-map-container map-left-frame">
-                <a
-                  href={receptionEvent.mapUrl || config.venue.directionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="map-floating-link-badge"
-                >
-                  <span>Open in Maps</span>
-                  <ExternalLink size={12} />
-                </a>
                 <iframe
                   title="Reception Venue Map"
                   src={receptionMapEmbed}
