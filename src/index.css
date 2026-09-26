@@ -743,6 +743,103 @@ body, html {
   letter-spacing: 0.5px;
 } */
 
+/* Combined Events Section Layout (Wedding & Reception in 1 Section) */
+.events-combined-overlay {
+  width: 100%;
+  max-width: 410px;
+  padding: 8px 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-20px);
+}
+
+.events-dual-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 10px 0 8px;
+}
+
+.single-event-compact-card {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(14, 6, 10, 0.65);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.compact-event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--accent-gold-light);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+
+.compact-event-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.compact-event-subtitle {
+  font-size: 0.82rem;
+  color: var(--accent-gold-light);
+  margin-bottom: 6px;
+}
+
+.compact-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.btn-compact-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+  color: #000;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 0.76rem;
+  margin-top: 6px;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.btn-compact-gold:hover {
+  transform: scale(1.03);
+}
+
 /* Direct Text Overlay Layout for Ceremony & Reception Sections (No Box / No Borders) */
 .event-overlay-content {
   width: 100%;

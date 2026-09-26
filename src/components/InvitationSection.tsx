@@ -39,8 +39,8 @@ export const InvitationSection: React.FC<InvitationSectionProps> = ({ config: _c
 
         </div>
 
-        <a href="#ceremony" className="scroll-indicator margin-top-md" aria-label="Scroll to Ceremony">
-          <span className="scroll-text">SCROLL FOR CEREMONY</span>
+        <a href="#events" className="scroll-indicator margin-top-md" aria-label="Scroll to Events">
+          <span className="scroll-text">SCROLL FOR EVENTS</span>
           <ChevronDown className="bounce-arrow" size={20} />
         </a>
       </div>

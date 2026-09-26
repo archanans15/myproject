@@ -5,8 +5,7 @@ import { CoverEnvelope } from './components/CoverEnvelope';
 import { MusicPlayer } from './components/MusicPlayer';
 import { HeroSection } from './components/HeroSection';
 import { InvitationSection } from './components/InvitationSection';
-import { CeremonySection } from './components/CeremonySection';
-import { ReceptionSection } from './components/ReceptionSection';
+import { EventsSection } from './components/EventsSection';
 
 export const App: React.FC = () => {
   const [config] = useState<WeddingConfig>(getSavedConfig());
@@ -35,8 +34,7 @@ export const App: React.FC = () => {
       <main className="main-content">
         <HeroSection config={config} />
         <InvitationSection config={config} guestName={guestName} />
-        <CeremonySection config={config} />
-        <ReceptionSection config={config} />
+        <EventsSection config={config} />
       </main>
 
       {isOpened && (
