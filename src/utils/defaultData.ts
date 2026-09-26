@@ -22,7 +22,7 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
     {
       id: 'muhurtham',
       title: 'Sacred Wedding Ceremony (Muhurtham)',
-      subtitle: 'The Shubh Muhurtham & Phere',
+      subtitle: 'The Shubh Muhurtham',
       date: 'Sunday, November 29, 2026',
       time: '10:30 AM (Auspicious Muhurtham)',
       location: 'Siva Sakthi Auditorium',
