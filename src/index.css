@@ -526,7 +526,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  transform: translateY(-26px);
+  transform: translateY(-38px);
 }
 
 .save-date-badge {
@@ -541,7 +541,7 @@ body, html {
   font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 1.5px;
-  margin-bottom: 14px;
+  margin-bottom: 22px;
 }
 
 .hero-tagline {
@@ -550,7 +550,7 @@ body, html {
   color: var(--text-secondary);
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
@@ -560,7 +560,7 @@ body, html {
   font-size: 3.0rem;
   font-weight: 700;
   line-height: 1.12;
-  margin: 10px 0 12px;
+  margin: 14px 0 16px;
   color: var(--text-primary);
   text-shadow: 0 4px 22px rgba(0, 0, 0, 0.95), 0 0 14px rgba(212, 175, 55, 0.5);
 }
@@ -572,11 +572,24 @@ body, html {
   margin: 0 8px;
 }
 
+.parents-names-subtitle {
+  text-align: center;
+  margin: 4px 0 14px;
+}
+
+.parents-row {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  font-family: var(--font-sub);
+  letter-spacing: 0.5px;
+}
+
 .hero-date-wrapper {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 12px 0 14px;
+  margin: 16px 0;
 }
 
 .divider-line {
@@ -593,19 +606,6 @@ body, html {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-.parents-names-subtitle {
-  text-align: center;
-  margin: 2px 0 10px;
-}
-
-.parents-row {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-  font-family: var(--font-sub);
-  letter-spacing: 0.5px;
-}
-
 .hero-welcome-msg {
   max-width: 95%;
   font-size: 0.98rem;
@@ -618,8 +618,8 @@ body, html {
 /* Countdown Grid & Component Styles (Border & Background Removed from Outer Container) */
 .countdown-container {
   padding: 4px 6px;
-  margin-top: 14px;
-  margin-bottom: 22px;
+  margin-top: 28px;
+  margin-bottom: 26px;
   background: transparent;
   border: none;
   box-shadow: none;
