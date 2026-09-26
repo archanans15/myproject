@@ -28,7 +28,7 @@ export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName: _guestN
         {/* Bottom Body Envelope Panel */}
         <div className="envelope-body-panel">
           <img
-            src="/images/card-bottom-body.jpg"
+            src="images/card-bottom-body.jpg"
             alt="Envelope Body"
             className="envelope-body-img"
           />
@@ -37,7 +37,7 @@ export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName: _guestN
         {/* Top Flap Envelope Panel */}
         <div className="envelope-top-panel">
           <img
-            src="/images/card-top-flap.png"
+            src="images/card-top-flap.png"
             alt="Envelope Top Flap"
             className="envelope-top-img"
           />
@@ -52,7 +52,7 @@ export const CoverEnvelope: React.FC<CoverEnvelopeProps> = ({ guestName: _guestN
           >
             <div className="seal-gold-wrapper">
               <img
-                src="/images/monogram-ra.png"
+                src="images/monogram-ra.png"
                 alt="RA Monogram Seal"
                 className="center-logo-img"
               />

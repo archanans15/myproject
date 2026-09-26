@@ -15,9 +15,9 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
   howWeMet: 'With the blessings of our families, we take our step together into a lifetime of happiness, love, and togetherness.',
   groomBio: 'Gentle, loving, and ambitious.',
   brideBio: 'Graceful, creative, and joyful.',
-  groomPhoto: '/images/groom.jpg',
-  bridePhoto: '/images/bride.jpg',
-  coupleHeroPhoto: '/images/couple.jpg',
+  groomPhoto: 'images/groom.jpg',
+  bridePhoto: 'images/bride.jpg',
+  coupleHeroPhoto: 'images/couple.jpg',
   events: [
     {
       id: 'muhurtham',
@@ -55,22 +55,22 @@ export const DEFAULT_WEDDING_CONFIG: WeddingConfig = {
   gallery: [
     {
       id: 'g1',
-      url: '/images/couple.jpg',
+      url: 'images/couple.jpg',
       caption: 'Rakesh & Archana • Together in Harmony'
     },
     {
       id: 'g2',
-      url: '/images/groom.jpg',
+      url: 'images/groom.jpg',
       caption: 'Rakesh • The Groom'
     },
     {
       id: 'g3',
-      url: '/images/bride.jpg',
+      url: 'images/bride.jpg',
       caption: 'Archana • The Bride'
     }
   ],
   theme: 'royal-gold',
-  bgMusicUrl: '/music/pookal_pookum_flute.mp3'
+  bgMusicUrl: 'music/pookal_pookum_flute.mp3'
 };
 
 export const INITIAL_WISHES: GuestWish[] = [
